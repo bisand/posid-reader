@@ -53,4 +53,4 @@ var totalElapsed = $"{(int)elapsed.TotalHours:D2}:{elapsed.Minutes:D2}:{elapsed.
 var cultureInfo = new System.Globalization.CultureInfo("nb-NO");
 Console.WriteLine($"Processed {_messageCount.ToString("N0", cultureInfo)} messages in {totalElapsed}. Messages per second: {(_messageCount / elapsed.TotalSeconds).ToString("N2", cultureInfo)}");
 
-Console.WriteLine($"Date: {DateTime.Now:yyyy-MM-dd HH:mm:ss} - Utc: {DateTime.UtcNow:yyyy-MM-dd HH:mm:ss}");
+Console.WriteLine($"Date: {TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.Local):yyyy-MM-dd HH:mm:ss} - Utc: {TimeZoneInfo.ConvertTimeToUtc(DateTime.Now, TimeZoneInfo.Local):yyyy-MM-dd HH:mm:ss}");

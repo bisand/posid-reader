@@ -1,0 +1,61 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
+{
+	"name": "C# (.NET)",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/dotnet:8.0-jammy",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-dotnettools.csharp",
+				"ms-dotnettools.csdevkit",
+				"github.vscode-github-actions",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"GitHub.vscode-pull-request-github",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"VisualStudioExptTeam.intellicode-api-usage-examples",
+				"ms-dotnettools.vscodeintellicode-csharp",
+				"ms-vscode.powershell",
+				"vscode-icons-team.vscode-icons",
+				"redhat.vscode-xml",
+				"DotJoshJohnson.xml",
+				"svipas.prettier-plus",
+				"redhat.vscode-yaml",
+				"foxundermoon.shell-format",
+				"patcx.vscode-nuget-gallery",
+				"ms-azuretools.vscode-docker",
+				"donjayamanne.githistory",
+				"deltaxml.xslt-xpath",
+				"Gruntfuggly.todo-tree"
+			]
+		}
+	},
+	"mounts": [
+		"type=bind,source=/home/${localEnv:USER}/.ssh,target=/home/vscode/.ssh",
+		"type=bind,source=/home/${localEnv:USER}/.zshrc,target=/home/vscode/.zshrc",
+		"type=bind,readonly,source=/etc/localtime,target=/etc/localtime",
+		"type=bind,readonly,source=/etc/timezone,target=/etc/timezone"
+	],
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker": {
+			"copyDockerContext": true
+		}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [5000, 5001],
+	// "portsAttributes": {
+	//		"5001": {
+	//			"protocol": "https"
+	//		}
+	// }
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "dotnet restore",
+	// "postCreateCommand": "cp ~/.zshrc ~/.zshrc.tmp && sed -i '/^ZSH_THEME/c\\ZSH_THEME=\"bira\"' ~/.zshrc.tmp && cp -f ~/.zshrc.tmp ~/.zshrc && rm ~/.zshrc.tmp"
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
